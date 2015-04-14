@@ -1,0 +1,83 @@
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+AC_PREREQ([2.69])
+AC_INIT([unp], [3], [1])
+AC_CONFIG_SRCDIR([tcpcliserv/tcpserv03.c])
+AC_CONFIG_HEADERS([config.h])
+
+# Checks for programs.
+AC_PROG_CC
+AC_PROG_RANLIB
+
+# Checks for libraries.
+
+# Checks for header files.
+AC_HEADER_RESOLV
+AC_CHECK_HEADERS([arpa/inet.h fcntl.h limits.h netdb.h netinet/in.h stddef.h stdlib.h string.h strings.h sys/ioctl.h sys/param.h sys/socket.h sys/time.h syslog.h unistd.h])
+
+# Checks for typedefs, structures, and compiler characteristics.
+AC_TYPE_INT64_T
+AC_TYPE_MODE_T
+AC_TYPE_OFF_T
+AC_TYPE_PID_T
+AC_TYPE_SIZE_T
+AC_TYPE_SSIZE_T
+AC_TYPE_UID_T
+AC_TYPE_UINT16_T
+AC_TYPE_UINT32_T
+AC_TYPE_UINT8_T
+
+# Checks for library functions.
+AC_FUNC_ERROR_AT_LINE
+AC_FUNC_FORK
+AC_FUNC_MALLOC
+AC_FUNC_MMAP
+AC_FUNC_REALLOC
+AC_CHECK_FUNCS([alarm atexit bzero dup2 \
+				gethostbyaddr gethostbyname gethostname gettimeofday \
+				gethostname getnameinfo gai_strerror inet_ntop\
+				inet_ntoa memmove memset select socket strchr strdup \
+				strerror strrchr strtol strtoul uname])
+
+AC_CONFIG_FILES([Makefile
+                 advio/Makefile
+                 bcast/Makefile
+                 debug/Makefile
+                 icmpd/Makefile
+                 inetd/Makefile
+                 intro/Makefile
+                 ioctl/Makefile
+                 ipopts/Makefile
+                 key/Makefile
+                 lib/Makefile
+                 libfree/Makefile
+                 libgai/Makefile
+                 libroute/Makefile
+                 mcast/Makefile
+                 my_daytime/Makefile
+                 mysdr/Makefile
+                 names/Makefile
+                 nonblock/Makefile
+                 oob/Makefile
+                 ping/Makefile
+                 route/Makefile
+                 rtt/Makefile
+                 sctp/Makefile
+                 select/Makefile
+                 server/Makefile
+                 sigio/Makefile
+                 sock/Makefile
+                 sockopt/Makefile
+                 ssntp/Makefile
+                 streams/Makefile
+                 streams/stream_dg/Makefile
+                 tcpcliserv/Makefile
+                 test/Makefile
+                 threads/Makefile
+                 traceroute/Makefile
+                 udpcksum/Makefile
+                 udpcliserv/Makefile
+                 unixdomain/Makefile])
+AM_INIT_AUTOMAKE
+AC_OUTPUT
